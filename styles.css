@@ -1,8 +1,10 @@
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    /* height: 100vh; */
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -19,7 +21,6 @@ body {
     height: 100px;
     margin: 20px auto;
     border-radius: 10px;
-    /* border: 2px solid black; */
 }
 
 .options {
@@ -29,7 +30,7 @@ body {
 }
 
 .color-btn {
-    border-radius: 50px;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     background-color: lightgrey;
@@ -49,4 +50,57 @@ body {
 #gameStatus {
     font-weight: bold;
     margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Increase container width on smaller screens */
+        padding: 15px;
+    }
+
+    #colorBox {
+        width: 80px; /* Reduce size of color box */
+        height: 80px;
+    }
+
+    .color-btn {
+        width: 40px; /* Reduce size of color buttons */
+        height: 40px;
+    }
+
+    #newGameButton {
+        width: 100%; /* Make the button full width */
+        padding: 12px 0;
+    }
+
+    #gameStatus {
+        font-size: 14px; /* Make the status text smaller for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* Full width for very small screens */
+        padding: 10px;
+    }
+
+    #colorBox {
+        width: 70px; /* Further reduce size of color box */
+        height: 70px;
+    }
+
+    .color-btn {
+        width: 35px; /* Further reduce size of color buttons */
+        height: 35px;
+    }
+
+    #newGameButton {
+        width: 100%; /* Ensure the button is always full width */
+        padding: 12px 0;
+    }
+
+    #gameStatus {
+        font-size: 12px; /* Reduce font size for tiny screens */
+    }
 }
