@@ -1,42 +1,55 @@
-const colorBox = document.getElementById("colorBox")
-const colorButtons = document.querySelectorAll(".color-btn")
-const gameStatus = document.getElementById("gameStatus")
-const scoreDisplay = document.getElementById("score")
-const newGameButton = document.getElementById("newGameButton")
+const colorBox = document.getElementById("colorBox");
+const colorButtons = document.querySelectorAll(".color-btn");
+const gameStatus = document.getElementById("gameStatus");
+const scoreDisplay = document.getElementById("score");
+const newGameButton = document.getElementById("newGameButton");
 
-let color = ["red" , "blue" , "green" , "yellow" , "purple" , "orange"]
-let targetColor = ""
-let score = 0
+let colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+let targetColor = "";
+let score = 0;
 
 function startGame() {
-    console.log("clicked")
-    targetColor = color[Math.floor(Math.random() * color.length)]
-    colorBox.style.backgroundColor = targetColor
+    targetColor = colors[Math.floor(Math.random() * colors.length)];
+    colorBox.style.backgroundColor = targetColor;
+
+    let shuffledColors = [...colors].sort(() => Math.random() - 0.5);
     
-    let shuffledColors = [...color].sort(() => Math.random() - 0.5) 
-
     colorButtons.forEach((btn, index) => {
-    btn.style.backgroundColor = shuffledColors[index]
-    btn.onclick = () => checkGuess(shuffledColors[index])
-})
+        btn.style.backgroundColor = shuffledColors[index];
+        btn.onclick = () => checkGuess(shuffledColors[index]);
+    });
 
-    gameStatus.textContent = ""
+    gameStatus.textContent = "";
+    gameStatus.className = "";
 }
 
 function checkGuess(color) {
+    gameStatus.classList.remove("wrong", "correct");
+
     if (color === targetColor) {
-        gameStatus.textContent = "Correct!"
-        gameStatus.style.color = "green"
-        gameStatus.classList.add("correct")
-        score++
-        scoreDisplay.textContent = score
-    }else{
-        gameStatus.textContent = "Wrong! Try again"
-        gameStatus.style.color = "red"
-        gameStatus.classList.add("wrong")
+        gameStatus.textContent = "Correct!";
+        gameStatus.style.color = "green";
+        gameStatus.classList.add("correct");
+        score++;
+    } else {
+        gameStatus.textContent = "Wrong! Try again.";
+        gameStatus.style.color = "red";
+        gameStatus.classList.add("wrong");
     }
+
+    scoreDisplay.textContent = score;
+
+    // Continue to the next round after 1 second
+    setTimeout(startGame, 1000);
 }
 
-newGameButton.onclick = startGame
+// New Game resets everything
+function resetGame() {
+    score = 0;
+    scoreDisplay.textContent = score;
+    startGame();
+}
 
-startGame()
+newGameButton.onclick = resetGame; // Resets score + starts a new round
+
+startGame();
