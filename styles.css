@@ -29,6 +29,7 @@ body {
 .color-btn {
     width: 50px;
     height: 50px;
+    background-color: lightgrey;
     border: none;
     cursor: pointer;
 }
