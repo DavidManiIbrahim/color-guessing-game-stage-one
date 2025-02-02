@@ -104,3 +104,23 @@ body {
         font-size: 12px; /* Reduce font size for tiny screens */
     }
 }
+
+/* Correct Answer Animation */
+.correct {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Wrong Answer Animation */
+.wrong {
+    animation: fadeOut 1s ease-in-out;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}

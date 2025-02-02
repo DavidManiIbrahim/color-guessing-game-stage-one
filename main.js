@@ -27,11 +27,13 @@ function checkGuess(color) {
     if (color === targetColor) {
         gameStatus.textContent = "Correct!"
         gameStatus.style.color = "green"
+        gameStatus.classList.add("correct")
         score++
         scoreDisplay.textContent = score
     }else{
         gameStatus.textContent = "Wrong! Try again"
         gameStatus.style.color = "red"
+        gameStatus.classList.add("wrong")
     }
 }
 
