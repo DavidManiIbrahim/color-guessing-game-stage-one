@@ -39,17 +39,18 @@ function checkGuess(color) {
 
     scoreDisplay.textContent = score;
 
-    // Continue to the next round after 1 second
+
     setTimeout(startGame, 1000);
 }
 
-// New Game resets everything
+
 function resetGame() {
     score = 0;
     scoreDisplay.textContent = score;
     startGame();
 }
 
-newGameButton.onclick = resetGame; // Resets score + starts a new round
+newGameButton.onclick = resetGame;
+
 
 startGame();
