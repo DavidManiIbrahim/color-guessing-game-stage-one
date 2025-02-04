@@ -1,4 +1,4 @@
-/* Base Styles */
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -52,60 +52,58 @@ body {
     margin-top: 10px;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .container {
-        width: 80%; /* Increase container width on smaller screens */
+        width: 80%;
         padding: 15px;
     }
 
     #colorBox {
-        width: 80px; /* Reduce size of color box */
+        width: 80px;
         height: 80px;
     }
 
     .color-btn {
-        width: 40px; /* Reduce size of color buttons */
+        width: 40px;
         height: 40px;
     }
 
     #newGameButton {
-        width: 100%; /* Make the button full width */
+        width: 100%;
         padding: 12px 0;
     }
 
     #gameStatus {
-        font-size: 14px; /* Make the status text smaller for mobile */
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        width: 90%; /* Full width for very small screens */
+        width: 90%;
         padding: 10px;
     }
 
     #colorBox {
-        width: 70px; /* Further reduce size of color box */
+        width: 70px;
         height: 70px;
     }
 
     .color-btn {
-        width: 35px; /* Further reduce size of color buttons */
+        width: 35px;
         height: 35px;
     }
 
     #newGameButton {
-        width: 100%; /* Ensure the button is always full width */
+        width: 100%;
         padding: 12px 0;
     }
 
     #gameStatus {
-        font-size: 12px; /* Reduce font size for tiny screens */
+        font-size: 12px;
     }
 }
 
-/* Correct Answer Animation */
 .correct {
     animation: bounce 0.5s ease-in-out;
 }
@@ -115,7 +113,6 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* Wrong Answer Animation */
 .wrong {
     animation: fadeOut 1s ease-in-out;
 }
