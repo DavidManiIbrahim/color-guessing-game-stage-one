@@ -17,6 +17,7 @@ body {
 }
 
 #colorBox {
+    display: hidden;
     width: 100px;
     height: 100px;
     margin: 20px auto;
